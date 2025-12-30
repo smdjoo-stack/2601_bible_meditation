@@ -115,27 +115,30 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="verse-text">
         `;
 
+        // Video
         if (data.bibleReadingVideoUrl) {
-            let videoId = '';
-            // Handle standard URL (v=...)
-            if (data.bibleReadingVideoUrl.includes('v=')) {
-                videoId = data.bibleReadingVideoUrl.split('v=')[1].split('&')[0];
-            }
-            // Handle short URL (youtu.be/...)
-            else if (data.bibleReadingVideoUrl.includes('youtu.be/')) {
-                // Split by youtu.be/ and then take the first part before any '?'
-                videoId = data.bibleReadingVideoUrl.split('youtu.be/')[1].split('?')[0];
-            }
+            const videoUrls = Array.isArray(data.bibleReadingVideoUrl)
+                ? data.bibleReadingVideoUrl
+                : [data.bibleReadingVideoUrl];
 
-            if (videoId) {
-                html += `
-                    <div class="video-section">
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/${videoId}?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            videoUrls.forEach(url => {
+                let videoId = '';
+                if (url.includes('v=')) {
+                    videoId = url.split('v=')[1].split('&')[0];
+                } else if (url.includes('youtu.be/')) {
+                    videoId = url.split('youtu.be/')[1].split('?')[0];
+                }
+
+                if (videoId) {
+                    html += `
+                        <div class="video-section">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/${videoId}?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
                         </div>
-                    </div>
-                `;
-            }
+                    `;
+                }
+            });
         }
 
         data.scriptureText.forEach(verse => {
