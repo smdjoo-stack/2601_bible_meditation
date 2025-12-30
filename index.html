@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>2026년 1월 묵상 - 열방위에서는교회</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Top App Bar -->
+        <header class="app-header">
+            <span class="material-symbols-outlined" id="header-back-btn" style="opacity: 0; pointer-events: none;">arrow_back</span>
+            <h2 class="header-title">한 달 묵상</h2>
+            <span class="material-symbols-outlined">filter_list</span>
+        </header>
+
+        <!-- Main Dashboard View -->
+        <main id="dashboard-view" class="main-content">
+            <!-- Featured Current Month -->
+            <div class="featured-section">
+                <div class="featured-card" onclick="openToday()">
+                    <div class="featured-image" style="background-image: url('https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=2070&auto=format&fit=crop');">
+                        <span class="badge">이번 달</span>
+                    </div>
+                    <div class="featured-content">
+                        <h3 class="text-xl text-primary" style="margin-bottom: 0.25rem;">1월: 빛의 자녀들</h3>
+                        <p class="text-secondary text-sm" style="margin-bottom: 1rem;">31일 간의 여정 • 요한일서 묵상</p>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 3%;"></div>
+                            </div>
+                            <button class="btn-primary">이어하기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- List Section -->
+            <div class="list-section-header">
+                <h2 class="text-xl">전체 묵상</h2>
+                <span class="text-primary text-sm font-bold" style="cursor: pointer;">전체보기</span>
+            </div>
+            
+            <div id="meditation-list" class="list-container">
+                <!-- Javascript will populate this list -->
+            </div>
+        </main>
+
+        <!-- Daily Detail View (Hidden by default) -->
+        <div id="daily-view" class="daily-view" style="display: none;">
+            <header class="app-header" style="position: sticky; top: 0; background: var(--bg-color);">
+                <span class="material-symbols-outlined" onclick="closeDailyView()">arrow_back</span>
+                <h2 class="header-title">오늘의 묵상</h2>
+                <span class="material-symbols-outlined" style="opacity: 0;">more_vert</span>
+            </header>
+            <div id="daily-content-container" class="daily-content">
+                <!-- Content goes here -->
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-item">
+                <span class="material-symbols-outlined">calendar_today</span>
+                <span>매일 묵상</span>
+            </button>
+            <button class="nav-item active">
+                <span class="material-symbols-outlined">view_agenda</span>
+                <span>한 달 묵상</span>
+            </button>
+            <button class="nav-item">
+                <span class="material-symbols-outlined">person</span>
+                <span>프로필</span>
+            </button>
+        </nav>
+    </div>
+
+    <!-- Data & Logic -->
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
