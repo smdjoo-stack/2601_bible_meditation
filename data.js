@@ -16,7 +16,7 @@ const meditationData = [
             { verse: 9, text: "만일 우리가 우리 죄를 자백하면 그는 미쁘시고 의로우사 우리 죄를 사하시며 우리를 모든 불의에서 깨끗하게 하실 것이요" },
             { verse: 10, text: "만일 우리가 범죄하지 아니하였다 하면 하나님을 거짓말하는 이로 만드는 것이니 또한 그의 말씀이 우리 속에 있지 아니하니라" }
         ],
-        bibleReadingVideoUrl: "https://www.youtube.com/watch?v=7wStsZ0hXqM",
+        bibleReadingVideoUrl: "https://youtu.be/bEAP8CI-8hI?si=Tyx_BGdyXFvQx0Mh",
         summary: "요한은 듣고 보고 만진 생명의 말씀을 성도들에게 전합니댜 이것을 전함은 아버지와 아들과 더불어 사귀고 기쁨이 넘치도록 하기 위해서입니다.<br>하나님이 빛 가운데 계신 것처럼 우리가 빛 가운데 행하면 서로 사귐이 있고, 또한 죄를 자백하면 용서받고 모든 불의애서 깨끗해질 것입니댜",
         expositions: [
             {
